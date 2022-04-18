@@ -6,76 +6,90 @@ import rec from '../../Images/Rectangle.png'
 import indev from '../../Images/indev.png'
 import { BsBookmark } from 'react-icons/bs'
 import { IoLocationOutline } from 'react-icons/io5'
-import windClicked from '../../Static/Icons/Wind-clicked.png'
+import { icon } from "leaflet";
 
-function GetIcon(_iconSize) {
+function getIcon(_iconSize, icon) {
     return L.icon({
-        iconUrl: require("../../Static/Icons/Wind.png"),
-        iconSize: [_iconSize]
-    })
-}
-
-function getIconActive(_iconSize) {
-    return L.icon({
-        iconUrl: require("../../Static/Icons/Wind-clicked.png"),
+        iconUrl: require("../../Static/Icons/" + icon + ".png"),
         iconSize: [_iconSize]
     })
 }
 
 const position = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 55.676098,
+    lng: 12.568337,
   }
 
-  
 function Map() {
 
-    const [isActive, setIsActive] = useState(false)
+    const [data, setData] = useState([
+        {
+            img: {rec},
+            indev: {indev},
+            h1: 'Amherst Community Wind Farm',
+            p: 'Developer: Amherst Community',
+            loc: 'Unknown',
+            icon: "Wind",
+            buttton: "Wind",
+            pos: [55, 12],
+            size: 40
+        },
+        {
+            img: {},
+            indev: {},
+            h1: 'Amherst Community Wind Farm',
+            p: 'Developer: Amherst Community',
+            loc: 'Unknown',
+            icon: "Ev",
+            buttton: "Wind",
+            pos: [54.5, 12],
+            size: 40
+        },
+        {
+            img: {rec},
+            indev: {indev},
+            h1: 'Amherst Community Wind Farm',
+            p: 'Developer: Amherst Community',
+            loc: 'Unknown',
+            icon: "Estorage",
+            buttton:"Wind",
+            pos: [55, 13],
+            size: 40
+        },
 
-    function handlePopupOpen() {
-        setIsActive(true)
-        console.log("Open")
-    }
+      ]);
 
-    function handlePopupClose() {
-        setIsActive(false)
-        console.log("Close")
-    }
+      const [activeIcon, setActiveIcon] = useState(false)
 
+      if (activeIcon) {
+          setData([...data, {icon: "WClicked"}])
+      }
     return(
         <div className={classes.Map}>
-            <MapContainer center={position} zoom={13}>
+            <MapContainer center={position} zoom={4}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker 
-                position={position} 
-                icon={isActive ? getIconActive(40) : GetIcon(40)}
-                eventHandlers={{
-                    click: () => {
-                      {setIsActive ? handlePopupOpen(40) : handlePopupClose(40)}
-                    },
-                  }}
-                >
-                    <Popup className={classes.CustomPopup} 
-                    onClose={handlePopupClose}
-                    isTooltipOpen={false}
-                    >
+                {data.map((marker, index) => (
+                    <Marker className={classes.Marker} position={marker.pos} key={index} icon={getIcon(marker.size, marker.icon)}>
+                        <Popup className={classes.CustomPopup} onOpen={() => setActiveIcon(true)} onClose={() => setActiveIcon(false)}>
                         <div className={classes.PopupNav}>
-                            <img src={rec} alt="rec"/>
-                            <ul>
-                                <p><img src={indev} alt='indev'/>In Development</p>
-                                <BsBookmark />
-                            </ul>
-                        </div>
-                        <h1>Amherst Community Wind Farm</h1>
-                        <p>Developer: Amherst Community</p>
-                        <p><IoLocationOutline/> Unknown</p>
-                        <button>Wind</button>
-                        <button>More</button>
-                    </Popup>
-                </Marker>
+                                <img src={marker.img} alt="rec"/>
+                                <ul className={classes.PopupUl}>
+                                    <li><img src={marker.indev} alt='indev'/></li>
+                                    <li>In Development</li>
+                                    <li><BsBookmark /></li>
+                                </ul>
+                            </div>
+                            <h1>{marker.h1}</h1>
+                            <p>{marker.p}</p>
+                            <p><IoLocationOutline/>{marker.loc}</p>
+                            <button>{marker.buttton}</button>
+                            <button>More</button>
+                        </Popup>
+                    </Marker>
+                ))}
             </MapContainer>
         </div>
     )
