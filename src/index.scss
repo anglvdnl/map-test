@@ -31,3 +31,10 @@ body {
 .leaflet-control-attribution{
   display: none;
 }
+
+.leaflet-marker-icon{
+  background-color: #fff;
+  border-radius: 50%;
+  height: 30px;
+  padding: 4px;
+}

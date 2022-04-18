@@ -8,9 +8,16 @@ import { BsBookmark } from 'react-icons/bs'
 import { IoLocationOutline } from 'react-icons/io5'
 import { icon } from "leaflet";
 
+// function getIcon(_iconSize, icon) {
+//     return L.icon({
+//         iconUrl: require("../../Static/Icons/" + icon + ".png"),
+//         iconSize: [_iconSize]
+//     })
+// }
+
 function getIcon(_iconSize, icon) {
     return L.icon({
-        iconUrl: require("../../Static/Icons/" + icon + ".png"),
+        iconUrl: require("../../Static/Icons/" + icon + ".svg"),
         iconSize: [_iconSize]
     })
 }
@@ -21,18 +28,17 @@ const position = {
   }
 
 function Map() {
-
-    const [data, setData] = useState([
+    const data = [
         {
             img: {rec},
             indev: {indev},
             h1: 'Amherst Community Wind Farm',
             p: 'Developer: Amherst Community',
             loc: 'Unknown',
-            icon: "Wind",
+            icon: "wind",
             buttton: "Wind",
             pos: [55, 12],
-            size: 40
+            size: 30
         },
         {
             img: {},
@@ -40,10 +46,10 @@ function Map() {
             h1: 'Amherst Community Wind Farm',
             p: 'Developer: Amherst Community',
             loc: 'Unknown',
-            icon: "Ev",
+            icon: "ev",
             buttton: "Wind",
             pos: [54.5, 12],
-            size: 40
+            size: 30
         },
         {
             img: {rec},
@@ -51,19 +57,56 @@ function Map() {
             h1: 'Amherst Community Wind Farm',
             p: 'Developer: Amherst Community',
             loc: 'Unknown',
-            icon: "Estorage",
+            icon: "estorage",
             buttton:"Wind",
             pos: [55, 13],
-            size: 40
+            size: 30
         },
 
-      ]);
+      ];
 
-      const [activeIcon, setActiveIcon] = useState(false)
+    // const [data, setData] = useState([
+    //     {
+    //         img: {rec},
+    //         indev: {indev},
+    //         h1: 'Amherst Community Wind Farm',
+    //         p: 'Developer: Amherst Community',
+    //         loc: 'Unknown',
+    //         icon: "Wind",
+    //         buttton: "Wind",
+    //         pos: [55, 12],
+    //         size: 40
+    //     },
+    //     {
+    //         img: {},
+    //         indev: {},
+    //         h1: 'Amherst Community Wind Farm',
+    //         p: 'Developer: Amherst Community',
+    //         loc: 'Unknown',
+    //         icon: "Ev",
+    //         buttton: "Wind",
+    //         pos: [54.5, 12],
+    //         size: 40
+    //     },
+    //     {
+    //         img: {rec},
+    //         indev: {indev},
+    //         h1: 'Amherst Community Wind Farm',
+    //         p: 'Developer: Amherst Community',
+    //         loc: 'Unknown',
+    //         icon: "Estorage",
+    //         buttton:"Wind",
+    //         pos: [55, 13],
+    //         size: 40
+    //     },
 
-      if (activeIcon) {
-          setData([...data, {icon: "WClicked"}])
-      }
+    //   ]);
+
+    //   const [activeIcon, setActiveIcon] = useState(false)
+
+    //   if (activeIcon) {
+    //       setData([...data, {icon: "WClicked"}])
+    //   }
     return(
         <div className={classes.Map}>
             <MapContainer center={position} zoom={4}>
@@ -73,7 +116,9 @@ function Map() {
                 />
                 {data.map((marker, index) => (
                     <Marker className={classes.Marker} position={marker.pos} key={index} icon={getIcon(marker.size, marker.icon)}>
-                        <Popup className={classes.CustomPopup} onOpen={() => setActiveIcon(true)} onClose={() => setActiveIcon(false)}>
+                        <Popup className={classes.CustomPopup} 
+                        // onOpen={() => setActiveIcon(true)} onClose={() => setActiveIcon(false)}
+                        >                        
                         <div className={classes.PopupNav}>
                                 <img src={marker.img} alt="rec"/>
                                 <ul className={classes.PopupUl}>
