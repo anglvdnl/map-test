@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup, } from 'react-leaflet'
 import L from 'leaflet'
 import classes from './Map.module.scss'
@@ -6,7 +6,6 @@ import rec from '../../Images/Rectangle.png'
 import indev from '../../Images/indev.png'
 import { BsBookmark } from 'react-icons/bs'
 import { IoLocationOutline } from 'react-icons/io5'
-import { icon } from "leaflet";
 
 // function getIcon(_iconSize, icon) {
 //     return L.icon({
