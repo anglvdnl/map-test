@@ -1,16 +1,16 @@
 import React from 'react'
 import classes from './Navbar.module.scss'
-import logo from '../../Images/logo.png'
+import logo from '../../Static/Images/logo.svg'
 
 function Navbar() {
   return (
     <div className={classes.Navbar}>
-        <h1>Logo</h1>
+        <img src={logo}/>
         <ul>
-            <li><a href='/'>Link1</a></li>
-            <li><a href='/'>Link2</a></li>
-            <li><a href='/'>Link3</a></li>
-            <li><a href='/'>Link4</a></li>
+            <li><a href='/'>Climate Solutions</a></li>
+            <li><a href='/'>Projects</a></li>
+            <li><a href='/'>Jobs</a></li>
+            <li><a href='/'>Training</a></li>
             <li><a href='/'>Login</a></li>
         </ul>
     </div>
