@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import L from 'leaflet'
 import MainSec from './components/MainSec/MainSec';
 import Btns from './components/Btns/Btns';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 export function getIcon(_iconSize, icon) {
@@ -66,9 +66,6 @@ function App() {
     },
 ]
 
-useEffect(() => {
-  setView(true)
-},[])
 
 const [view, setView] = useState(true)
 
