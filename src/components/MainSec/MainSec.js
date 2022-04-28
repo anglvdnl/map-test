@@ -34,7 +34,7 @@ function MainSec(props) {
       ?
       <Map data={props.data} center={{ lat: 52.8174847, lng: 10.6912322 }} zoom={4} position={props.position}/>
       :
-      <List />}
+      <List data-testid="test-list" />}
     </div>
   )
 }
