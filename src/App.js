@@ -9,7 +9,7 @@ import { useState } from 'react';
 export function getIcon(_iconSize, icon) {
   return L.icon({
       iconUrl: require("./Static/Icons/"+ icon +".png"),
-      iconSize: [_iconSize]
+      iconSize: [_iconSize],
   })
 }
 

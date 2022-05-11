@@ -4,6 +4,7 @@ import classes from './Map.module.scss'
 import { BsBookmark } from 'react-icons/bs'
 import { IoLocationOutline } from 'react-icons/io5'
 import { getIcon, getIconClicked } from "../../App";
+import L from 'leaflet'
 import { CSSTransition } from "react-transition-group";
 
   function Map(props) {
@@ -30,7 +31,7 @@ import { CSSTransition } from "react-transition-group";
       }, [isIconActive, refReady, map]);
 
     return(
-        <div className={classes.Map}>
+        <div className={classes.Map} data-testid="map">
             <MapContainer center={props.position} zoom={8}
             whenCreated={(leafletMap) => setMap(leafletMap)}
             >

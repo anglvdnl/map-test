@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Btns.module.scss'
 
 function Btns(props) {
@@ -10,7 +10,7 @@ function Btns(props) {
             className={props.view ? '' : classes.active}>List View</button>
             <button
             data-testid="map-btn"
-            onClick={() => props.setView(true)}  
+            onClick={() => props.setView(true)}
             className={props.view ? classes.active : ''}>Map View</button>
       </div>
   )
