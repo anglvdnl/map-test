@@ -45,7 +45,7 @@ function App() {
         indev: {},
         h1: 'Amherst Community Wind Farm',
         p: 'Developer: Amherst Community',
-        loc: 'Unknown',
+        loc: 'Known',
         icon: "Ev",
         iconClicked: "EvClicked", 
         buttton: "Battery",
