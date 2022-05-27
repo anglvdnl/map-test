@@ -1,0 +1,17 @@
+.Status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    p{
+        font-weight: 700;
+        font-size: 15px;
+        color: #404041;
+    }
+
+    img{
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+    }
+}

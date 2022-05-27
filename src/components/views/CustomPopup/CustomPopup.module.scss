@@ -1,0 +1,77 @@
+.CustomPopup{
+    padding: 30px 30px;
+    font-family: 'Lato', sans-serif;
+    
+    .PopupNav{
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: flex-start;
+
+
+        .MainImg{
+            width: 100px;
+            height: 100px;
+            margin-right: 40px;
+        }
+
+        svg{
+            width: 20px;
+            height: 25px;
+            color: #9E9E9E;
+        }
+    }
+
+    h1{
+        font-weight: 700;
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 5px;
+    }
+
+    h3{
+        color: #2B6B73;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .Location{
+        display: flex;
+        align-items: center;
+
+        color: #404041;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        svg{
+            width: 16px;
+            height: 20px;
+        }
+    }
+
+    .Tag{
+        background: #C8E6E8;
+        border-radius: 36px;
+        width: 70px;
+        height: 30px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2B6B73;
+    }
+
+    button{
+        margin: 30px 0 15px 0;
+        width: 120px;
+        height: 45px;
+        background: #2B6B73;
+        border-radius: 25px;
+        color: #FFFFFF;
+        border: 0;
+        outline: none;
+    }
+}
+

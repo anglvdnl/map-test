@@ -1,0 +1,61 @@
+.Login{
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin: 40px auto;
+    span{
+        display: flex;
+        justify-content: center;
+    }
+    h1{
+        text-align: center;
+        font-size: 28px;
+        color: #2B6B73;
+    }
+    img{
+        width: 250px;
+        margin: 20px auto 10px auto;
+        cursor: pointer;
+    }
+    label{
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    input{
+        background: #FFFFFF;
+        border: 2px solid #E0E0E0;
+        border-radius: 17.5px;
+        padding: 10px;
+        margin-bottom: 18px;
+
+    }
+    div{
+        display: flex;
+        align-items: center;
+        p{
+            color: #E0E0E0;
+        }
+        hr{
+            width: 120px;
+            height: 0px;
+            color: #E0E0E0;
+            background-color: #E0E0E0;
+            border: 2px solid #E0E0E0;
+        }
+        label{
+            font-size: 16px;
+            color: #9E9E9E;
+            margin-left: 5px;
+        }
+    }
+    .LoginBtn{
+        background: #2B6B73;
+        border-radius: 25px;
+        width: 150px;
+        height: 45px;
+        border: 0;
+        margin: 40px auto;
+        color: #FFFFFF;
+    }
+}
