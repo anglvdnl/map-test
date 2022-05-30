@@ -1,33 +1,33 @@
-import React, { useContext, useState } from 'react'
+import React, { useEffect } from 'react'
 import FacebookLogin from 'react-facebook-login'
-import { UserContext } from '../../../data/models/UserContext';
 import classes from './Login.module.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { authActions } from '../../app/slices/authSlice'
 
-function Login() {
-    const { user, setUser } = useContext(UserContext)
+function FbLogin() {
+    const dispatch = useDispatch()
+    const user = useSelector(state => state._auth)
 
     const responseFacebook = response => {
         if (response.status !== 'unknown') {
-            localStorage.setItem("fbLoginToken", JSON.stringify(response));
-            setUser(() => ({
-                isLoggedIn: true,
-                name: response.name,
-                email: response.email,
-                picture: response.picture.data.url
-            }))
+            console.log(response)
+            dispatch(authActions.login(response))
         }
+    }
+
+    function handleLogout() {
+        dispatch(authActions.logout())
     }
 
     let fbContent
 
-    console.log(user)
-
-    if (user.isLoggedIn) {
+    if (user.isLogged) {
         fbContent = (
-            <div>
+            <div className={classes.Profile}>
                 <img src={user.picture} alt={user.name} />
                 <h2>Welcome {user.name}</h2>
                 Email: {user.email}
+                <button onClick={handleLogout} >Logout</button>
             </div>
         )
     } else {
@@ -35,8 +35,6 @@ function Login() {
             <div className={classes.Login} >
                 <h1>Create Account</h1>
                 <FacebookLogin
-                    appId="872537787474596"
-                    autoLoad={false}
                     fields="name,email,picture"
                     callback={responseFacebook} />
                 <div>
@@ -44,15 +42,15 @@ function Login() {
                     <p>OR</p>
                     <hr />
                 </div>
-                <label for="name">Full Name</label>
+                <label htmlFor="name">Full Name</label>
                 <input id='name' placeholder='Full Name' />
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input id='email' placeholder='Email' />
-                <label for="pass">Password</label>
+                <label htmlFor="pass">Password</label>
                 <input id='pass' placeholder='Password' />
                 <div>
                     <input id='check' type="checkbox" />
-                    <label for="check">Sign up for Iron and Earth's mailing list. Stay in touch with the organisation!</label>
+                    <label htmlFor="check">Sign up for Iron and Earth's mailing list. Stay in touch with the organisation!</label>
                 </div>
                 <button className={classes.LoginBtn}>Sign Up</button>
             </div >
@@ -63,4 +61,4 @@ function Login() {
     return fbContent
 }
 
-export default Login
+export default FbLogin

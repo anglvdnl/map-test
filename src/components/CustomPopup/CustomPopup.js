@@ -9,7 +9,7 @@ function CustomPopup(props) {
         <React.Fragment>
             <div className={classes.CustomPopup}>
                 <nav className={classes.PopupNav}>
-                    <img className={classes.MainImg} src={require(`../../../Static/Images/${props.marker.popupImg + '.png'}`)} alt={`${props.marker.tags}`} />
+                    <img className={classes.MainImg} src={require(`../../static/Images/${props.marker.popupImg + '.png'}`)} alt={`${props.marker.tags}`} />
                     <Status status={props.marker.status} />
                     <BsBookmark />
                 </nav>

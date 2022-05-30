@@ -1,7 +1,7 @@
 import { StatusType } from './statusType.tsx'
-import inDevImg from '../../../Static/Images/indev.png'
-import opImg from '../../../Static/Images/op.png'
-import closedImg from '../../../Static/Images/closed.png'
+import inDevImg from '../../static/Images/indev.png'
+import opImg from '../../static/Images/op.png'
+import closedImg from '../../static/Images/closed.png'
 
 export function getImgByStatus(status) {
     function buildTagByStatus(status) {

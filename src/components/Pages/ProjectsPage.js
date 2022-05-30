@@ -1,5 +1,5 @@
 import React from 'react'
-import PMainSection from '../components/views/PMainSection/PMainSection'
+import PMainSection from '../PMainSection/PMainSection'
 
 function ProjectsPage(props) {
     return (

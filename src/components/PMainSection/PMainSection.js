@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import classes from './PMainSections.module.scss'
 import ProjectsMap from '../ProjectsMap/ProjectsMap'
 import ProjectsList from '../ProjectsList/ProjectsList'
-import { IoIosArrowDown } from 'react-icons/io'
 
 function PMainSection(props) {
 

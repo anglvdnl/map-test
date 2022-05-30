@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ProjectModel } from '../../../data/models/ProjectModel'
+import { ProjectDto } from '../../data/dto/Projects/ProjectDto'
 
 function getGeocode(location) {
   return axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -31,7 +31,7 @@ export async function projectsInitialize(jsonData) {
     }
 
     result.push(
-      new ProjectModel(obj.id, obj.slug, obj.title, obj.developerName,
+      ProjectDto(obj.id, obj.slug, obj.title, obj.developerName,
         obj.developerUrl, obj.tags, obj.location, obj.status, obj.expectedBy,
         obj.since, obj.numConstructionJobs, obj.numPermanentJobs, obj.isBookmarked,
         iconName, iconClickedName, position, popupImg)

@@ -1,15 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import classes from './Navbar.module.scss'
-import logo from '../../../Static/Images/logo.svg'
+import logo from '../../static/Images/logo.svg'
 import {
   Link,
   Outlet
 } from "react-router-dom";
-import { DefaultUser, UserContext } from '../../../data/models/UserContext'
+import { useSelector } from 'react-redux';
 
 function Navbar() {
-
-  const { user, setUser } = useContext(UserContext)
+  const user = useSelector(state => state._auth)
 
   return (
     <React.Fragment>
@@ -21,10 +20,7 @@ function Navbar() {
           <li><Link to="/jobs">Jobs</Link></li>
           <li><Link to="/training">Training</Link></li>
           <li><Link to="/blog">Blog</Link></li>
-          {user.isLoggedIn
-            ? <li><Link onClick={() => { window.localStorage.clear(); setUser(DefaultUser); }} to="/">Logout</Link></li>
-            : <li><Link to="/login">Login</Link></li>
-          }
+          <li><Link to="/auth">{user.isLogged ? "Profile" : "Login"}</Link></li>
         </ul>
       </div>
       <Outlet />

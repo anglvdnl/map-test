@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./ProjectsMap.module.scss";
-import { getIcon, getIconClicked } from "../../../App";
+import { getIcon, getIconClicked } from "../../data/utils/getIcons";
 import { CSSTransition } from "react-transition-group";
 import CustomPopup from '../CustomPopup/CustomPopup'
 

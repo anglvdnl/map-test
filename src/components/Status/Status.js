@@ -1,5 +1,5 @@
 import React from 'react'
-import { getImgByStatus, getTextByStatus } from '../../controllers/core/statusController'
+import { getImgByStatus, getTextByStatus } from './statusController'
 import classes from './Status.module.scss'
 
 function Status(props) {

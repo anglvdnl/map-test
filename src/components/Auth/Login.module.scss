@@ -59,3 +59,30 @@
         color: #FFFFFF;
     }
 }
+
+.Profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 100px;
+
+    img{
+        height: 100px;
+    }
+
+    button{
+        border: 1px solid #2B6B73;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #2B6B73;
+        color: #fff;
+        border-radius: 20px;
+        transition: all 0.2s ;
+
+        &:hover{
+            background-color: rgba($color: #2B6B73, $alpha: 0.5);
+            color: #000;
+        }
+    }
+}
