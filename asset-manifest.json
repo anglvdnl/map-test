@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Anglvdnl.github.io/mapping-proj/static/css/main.a217a6eb.css",
-    "main.js": "/Anglvdnl.github.io/mapping-proj/static/js/main.d1429a13.js",
-    "static/js/787.d9adace4.chunk.js": "/Anglvdnl.github.io/mapping-proj/static/js/787.d9adace4.chunk.js",
-    "static/media/logo.svg": "/Anglvdnl.github.io/mapping-proj/static/media/logo.e8aba0a79fc450a355d21083a523faff.svg",
-    "index.html": "/Anglvdnl.github.io/mapping-proj/index.html",
-    "main.a217a6eb.css.map": "/Anglvdnl.github.io/mapping-proj/static/css/main.a217a6eb.css.map",
-    "main.d1429a13.js.map": "/Anglvdnl.github.io/mapping-proj/static/js/main.d1429a13.js.map",
-    "787.d9adace4.chunk.js.map": "/Anglvdnl.github.io/mapping-proj/static/js/787.d9adace4.chunk.js.map"
+    "main.css": "/mapping-proj/static/css/main.a217a6eb.css",
+    "main.js": "/mapping-proj/static/js/main.29dd62f3.js",
+    "static/js/787.d9adace4.chunk.js": "/mapping-proj/static/js/787.d9adace4.chunk.js",
+    "static/media/logo.svg": "/mapping-proj/static/media/logo.55142da8dae2c9ec35b43acb88162e5f.svg",
+    "index.html": "/mapping-proj/index.html",
+    "main.a217a6eb.css.map": "/mapping-proj/static/css/main.a217a6eb.css.map",
+    "main.29dd62f3.js.map": "/mapping-proj/static/js/main.29dd62f3.js.map",
+    "787.d9adace4.chunk.js.map": "/mapping-proj/static/js/787.d9adace4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a217a6eb.css",
-    "static/js/main.d1429a13.js"
+    "static/js/main.29dd62f3.js"
   ]
 }
