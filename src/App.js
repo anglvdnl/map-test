@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <HashRouter window>
+      <HashRouter hash="https://anglvdnl.github.io/mapping-proj/">
         <Routes>
           <Route path='/' element={<Navbar />}>
             <Route element={<СlimatSolutionsPage />} />
