@@ -38,13 +38,13 @@ function App() {
     <div className={classes.App}>
       <Router>
         <Routes>
-          <Route path='/' element={<Navbar />}>
+          <Route path='/mapping-proj' element={<Navbar />}>
             <Route index element={<СlimatSolutionsPage />} />
-            <Route path='projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
-            <Route path='jobs' element={<JobsPage />} />
-            <Route path='training' element={<TrainingPage />} />
-            <Route path='blog' element={<BlogPage />} />
-            <Route path='auth' element={<AuthPage />} />
+            <Route path='/mapping-proj/projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
+            <Route path='/mapping-proj/jobs' element={<JobsPage />} />
+            <Route path='/mapping-proj/training' element={<TrainingPage />} />
+            <Route path='/mapping-proj/blog' element={<BlogPage />} />
+            <Route path='/mapping-proj/auth' element={<AuthPage />} />
           </Route>
         </Routes>
       </Router>
