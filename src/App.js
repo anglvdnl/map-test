@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { projectsInitialize } from './app/reducers/projectsReducers';
 import { authActions } from './app/slices/authSlice'
 import classes from './App.module.scss'
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <BrowserRouter basemname={`/${process.env.PUBLIC_URL}`}>
+      <HashRouter window>
         <Routes>
           <Route path='/' element={<Navbar />}>
             <Route element={<СlimatSolutionsPage />} />
@@ -47,7 +47,7 @@ function App() {
             <Route path='auth' element={<AuthPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
