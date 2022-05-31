@@ -36,10 +36,10 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <HashRouter hash="https://anglvdnl.github.io/mapping-proj/">
+      <HashRouter hash="mapping-proj">
         <Routes>
           <Route path='/' element={<Navbar />}>
-            <Route element={<СlimatSolutionsPage />} />
+            <Route path='' element={<СlimatSolutionsPage />} />
             <Route path='projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
             <Route path='jobs' element={<JobsPage />} />
             <Route path='training' element={<TrainingPage />} />
