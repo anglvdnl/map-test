@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { Routes, Route, HashRouter as Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { projectsInitialize } from './app/reducers/projectsReducers';
 import { authActions } from './app/slices/authSlice'
 import classes from './App.module.scss'
@@ -36,18 +36,18 @@ function App() {
 
   return (
     <div className={classes.App}>
-      <Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path='/mapping-proj' element={<Navbar />}>
-            <Route index element={<СlimatSolutionsPage />} />
-            <Route path='/mapping-proj/projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
-            <Route path='/mapping-proj/jobs' element={<JobsPage />} />
-            <Route path='/mapping-proj/training' element={<TrainingPage />} />
-            <Route path='/mapping-proj/blog' element={<BlogPage />} />
-            <Route path='/mapping-proj/auth' element={<AuthPage />} />
+          <Route path='mapping-proj/' element={<Navbar />}>
+            <Route path='mapping-proj/' element={<СlimatSolutionsPage />} />
+            <Route path='mapping-proj/projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
+            <Route path='mapping-proj/jobs' element={<JobsPage />} />
+            <Route path='mapping-proj/training' element={<TrainingPage />} />
+            <Route path='mapping-proj/blog' element={<BlogPage />} />
+            <Route path='mapping-proj/auth' element={<AuthPage />} />
           </Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
