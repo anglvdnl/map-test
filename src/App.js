@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, HashRouter as Router } from "react-router-dom";
 import { projectsInitialize } from './app/reducers/projectsReducers';
 import { authActions } from './app/slices/authSlice'
 import classes from './App.module.scss'
