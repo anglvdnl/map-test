@@ -1,5 +1,8 @@
 .MainSec{
-    
+    background-color: #fff;
+    border-radius: 16px;
+    width: 1300px;
+    margin: 0 auto;
     .MainSecInfo{
         padding: 10px 80px 20px 80px;
     
@@ -93,22 +96,22 @@
         font-size: 18px;
        }
     }
+}
 
-    .Btns{
-        margin: 40px 0 0 80px;
-        button{
-            width: 100px;
-            height: 35px;
-            background: #2B6B73;
-            border-radius: 25px;
-            color: #FFFFFF;
-            outline: none;
-            border: none;
-            margin-right: 30px;
-    
-            &.active{
-                background: #9E9E9E;
-            }
+.Btns{
+    margin: 40px 0 30px 150px;
+    button{
+        width: 100px;
+        height: 35px;
+        background: #2B6B73;
+        border-radius: 25px;
+        color: #FFFFFF;
+        outline: none;
+        border: none;
+        margin-right: 30px;
+
+        &.active{
+            background: #9E9E9E;
         }
     }
 }

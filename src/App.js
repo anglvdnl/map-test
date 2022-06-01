@@ -12,6 +12,7 @@ import JobsPage from './components/Pages/JobsPage';
 import TrainingPage from './components/Pages/TrainingPage';
 import BlogPage from './components/Pages/BlogPage';
 import AuthPage from './components/Pages/AuthPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const dispatch = useDispatch()
@@ -47,6 +48,7 @@ function App() {
             <Route path='auth' element={<AuthPage />} />
           </Route>
         </Routes>
+        <Footer />
       </HashRouter>
     </div>
   );
