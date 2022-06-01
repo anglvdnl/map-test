@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import classes from "./ProjectsMap.module.scss";
 import { getIcon, getIconClicked } from "../../data/utils/getIcons";
 import { CSSTransition } from "react-transition-group";
-import CustomPopup from '../CustomPopup/CustomPopup'
+import CustomPopup from '../CustomProjectsPopup/CustomPopup'
 
 function ProjectsMap(props) {
   const [isIconActive, setIsIconActive] = useState(false);

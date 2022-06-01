@@ -44,7 +44,7 @@ function PMainSection(props) {
         ?
         <ProjectsMap data={props.data} zoom={4} mapStartPos={props.mapStartPos} />
         :
-        <ProjectsList />}
+        <ProjectsList data={props.data} />}
     </div>
   )
 }

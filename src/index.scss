@@ -65,3 +65,18 @@ body {
   width: 100% !important;
   margin: 0;
 }
+
+.dd-enter {
+  opacity: 0;
+}
+.dd-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.dd-exit {
+  opacity: 1;
+}
+.dd-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}

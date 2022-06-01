@@ -1,8 +1,15 @@
-import React from 'react'
+import react from 'react'
+import CustomListView from '../CustomListView/CustomListView'
+import classes from './ProjectsList.module.scss'
 
-function ProjectsList() {
+function ProjectsList(props) {
+
   return (
-    <div>ProjectsList</div>
+    <div className={classes.List}>
+      {props.data.map((listItem, index) => (
+        <CustomListView key={index} listItem={listItem} />
+      ))}
+    </div>
   )
 }
 
