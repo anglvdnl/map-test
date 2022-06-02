@@ -8,32 +8,23 @@ import Projects from "./data/json/projects.json";
 import Navbar from './components/Navbar/Navbar';
 import СlimatSolutionsPage from './components/Pages/СlimatSolutionsPage'
 import ProjectsPage from './components/Pages/ProjectsPage';
-import JobsPage from './components/Pages/JobsPage';
 import TrainingPage from './components/Pages/TrainingPage';
-import BlogPage from './components/Pages/BlogPage';
 import AuthPage from './components/Pages/AuthPage';
 import Footer from './components/Footer/Footer';
+import { projectsActions } from './app/slices/projectsSlice';
 
 function App() {
   const dispatch = useDispatch()
+  projectsInitialize(Projects.data).then(result => dispatch(projectsActions.setProjects(result)))
+
+  console.log("hui")
 
   const token = JSON.parse(localStorage.getItem("fbLoginToken"));
   if (token) {
     dispatch(authActions.login(token))
   }
 
-  const [initedProjectsData, setInitedProjectsData] = useState([]);
-
   const mapStartPos = { lat: 46.877186, lng: -96.789803 };
-
-  useEffect(() => {
-    if (initedProjectsData.length <= 0) {
-      projectsInitialize(Projects.data).then(initializedData => {
-        console.log(initializedData)
-        setInitedProjectsData(initializedData)
-      });
-    }
-  })
 
   return (
     <div className={classes.App}>
@@ -41,16 +32,14 @@ function App() {
         <Routes>
           <Route path='/' element={<Navbar />}>
             <Route path='' element={<СlimatSolutionsPage />} />
-            <Route path='projects' element={<ProjectsPage data={initedProjectsData} mapStartPos={mapStartPos} />} />
-            <Route path='jobs' element={<JobsPage />} />
+            <Route path='projects' element={<ProjectsPage mapStartPos={mapStartPos} />} />
             <Route path='training' element={<TrainingPage />} />
-            <Route path='blog' element={<BlogPage />} />
             <Route path='auth' element={<AuthPage />} />
           </Route>
         </Routes>
         <Footer />
       </HashRouter>
-    </div>
+    </div >
   );
 }
 

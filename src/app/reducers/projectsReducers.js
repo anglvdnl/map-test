@@ -10,24 +10,18 @@ function getGeocode(location) {
   })
 }
 
-export async function projectsInitialize(jsonData) {
-
-  let result = [];
-
+const projectsInitialize = async (jsonData) => {
+  let result = []
   for (let i = 0; i < jsonData.length; i++) {
     const obj = jsonData[i];
 
-    let iconName = obj.tags.length > 0 ? obj.tags[0] : "Unknown";
+    let iconName = obj.tags.length > 0 ? obj.tags[0] : "Unknown"
     let iconClickedName = iconName + "Clicked";
     let popupImg = obj.tags[0] + 'Img'
     let position
     let geocode = await getGeocode(obj.location)
-
     if (geocode.data.status === "OK") {
       position = geocode.data.results[0].geometry.location
-    } else {
-      console.log(`Wrong city name: ${obj.location}`)
-      continue
     }
 
     result.push(
@@ -39,3 +33,9 @@ export async function projectsInitialize(jsonData) {
   }
   return result
 }
+
+const setProjectsReducer = (state, action) => {
+  state.projects = action.payload;
+}
+
+export { projectsInitialize, setProjectsReducer }

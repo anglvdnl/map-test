@@ -22,4 +22,10 @@ const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
     }
 };
 
-export { ProjectDto }
+const Projects = (projects = []) => {
+    return {
+        projects: projects
+    }
+}
+
+export { ProjectDto, Projects }

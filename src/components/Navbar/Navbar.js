@@ -17,9 +17,7 @@ function Navbar() {
         <ul>
           <li><Link to="/">Climate Solutions</Link></li>
           <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/jobs">Jobs</Link></li>
           <li><Link to="/training">Training</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/auth">{user.isLogged ? "Profile" : "Login"}</Link></li>
         </ul>
       </div>
