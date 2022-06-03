@@ -1,5 +1,5 @@
 const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
-    location, status, expectedBy, since, numConstructionJobs, numPermanentJobs, isBookmarked,
+    location, province, status, expectedBy, since, numConstructionJobs, numPermanentJobs, isBookmarked,
     icon, iconClicked, position, popupImg) => {
     return {
         id: id,
@@ -9,6 +9,7 @@ const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
         developerUrl: developerUrl,
         tags: tags,
         location: location,
+        province: province,
         status: status,
         expectedBy: expectedBy,
         since: since,
@@ -22,10 +23,14 @@ const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
     }
 };
 
-const Projects = (projects = []) => {
+const DefaultProject = ProjectDto(null, '', '', '', '', '', '', '', null, null, '', null, null, null, '', '', {}, '')
+
+const Projects = (projects = [], provinceFilters = [], filteredProjects = []) => {
     return {
-        projects: projects
+        projects: projects,
+        provinceFilters: provinceFilters,
+        filteredProjects: filteredProjects
     }
 }
 
-export { ProjectDto, Projects }
+export { ProjectDto, Projects, DefaultProject }

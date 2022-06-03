@@ -23,7 +23,7 @@ function ProjectsMap(props) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {projectsData.projects.map((project, index) => (
+        {projectsData.filteredProjects.map((project, index) => (
           <MapMarker map={map} project={project} key={index} />
         ))}
 
