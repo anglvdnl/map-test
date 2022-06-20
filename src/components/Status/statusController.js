@@ -36,7 +36,7 @@ export function getTextByStatus(status) {
     const getDevelopmentTag = () => "In Development";
     const getOperatingTag = () => "Operation";
     const getClosedTag = () => "Closed";
-    const getEmptyTag = () => "notag :(";
+    const getEmptyTag = () => "";
 
     return buildTagByStatus(status)
 }

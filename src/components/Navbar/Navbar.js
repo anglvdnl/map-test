@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './Navbar.module.scss'
+import styles from './Navbar.module.scss'
 import logo from '../../static/Images/logo.svg'
 import {
   Link,
@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <React.Fragment>
-      <div className={classes.Navbar}>
+      <div className={styles.Navbar}>
         <img alt='' src={logo} />
         <ul>
           <li><Link to="/">Climate Solutions</Link></li>

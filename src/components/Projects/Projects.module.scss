@@ -2,7 +2,7 @@
     background-color: #fff;
     border-radius: 16px;
     min-width: 1300px;
-    margin: 50px auto;
+    margin: 0 auto;
 
     @media screen and (max-width: 1300px) {
         min-width: 600px;
@@ -118,7 +118,7 @@
 }
 
 .Btns{
-    margin: 40px 0 30px 40px;
+    margin: 20px 0 20px 40px;
     button{
         width: 100px;
         height: 35px;

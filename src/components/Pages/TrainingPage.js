@@ -1,10 +1,12 @@
 import React from 'react'
-import classes from './Pages.module.scss'
+import TrainingPrograms from '../TrainingPrograms/TrainingPrograms'
+import styles from './Pages.module.scss'
+import './index.scss'
 
-function TrainingPage() {
+function TrainingPage(props) {
     return (
-        <div className={classes.TP}>
-            <h2>Training Programs</h2>
+        <div className={styles.TP}>
+            <TrainingPrograms mapStartPos={props.mapStartPos} />
         </div>
     )
 }

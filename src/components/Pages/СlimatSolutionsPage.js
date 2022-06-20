@@ -1,9 +1,9 @@
 import React from 'react'
-import classes from './Pages.module.scss'
+import styles from './Pages.module.scss'
 
 function СlimatSolutionsPage() {
     return (
-        <div className={classes.CS}>
+        <div className={styles.CS}>
             <h2>Climate Solutions</h2>
         </div>
     )

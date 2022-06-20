@@ -1,0 +1,137 @@
+.Section{
+    background-color: #fff;
+    border-radius: 16px;
+    min-width: 1300px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1300px) {
+        min-width: 600px;
+    }
+
+    .Info{
+        padding: 10px 80px 20px 80px;
+    
+       nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        button{
+            background: #4CB4C0;
+            border-radius: 40px;
+            width: 120px;
+            height: 35px;
+            color: #FFFFFF;
+            border: none;
+        }
+       }
+    
+       p{
+        font-size: 18px;
+        color: #404041;
+        margin-bottom: 35px;
+       }
+    
+       input{
+        border: 2px solid #E0E0E0;
+        background: #FFFFFF;
+        width: 300px;
+        height: 40px;
+        padding: 0 20px 0 20px;
+        border-radius: 17.5px;
+        margin-bottom: 20px;
+       }
+    
+       .Filters{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin-bottom: 40px;
+
+        .Items{
+            display: flex;
+            justify-content: space-around;
+    
+            span{
+                position: relative;
+                li{
+                    margin-right: 20px;
+                }
+    
+                .Filtered{
+                    z-index: 10000;
+                    background-color: #fff;
+                    box-shadow: 0px 0px 26px 1px rgba(0,0,0,0.66);
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%, 10%);
+                    width: 300px;
+                    border-radius: 20px;
+                    
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        li{
+                            margin: 5px;
+                            background-color: #fff;
+
+                            &.active{
+                                background-color: #4CB4C0;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        li{
+            border: 2px solid #E0E0E0;
+            border-radius: 25px;
+            height: 45px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            padding: 20px 20px 20px 20px;
+            text-decoration: none;
+            color: #404041;
+            position: relative;
+            cursor: pointer;
+        }
+    
+        .RFilter{
+            color: #4CB4C0;
+            border: 2px solid #4CB4C0;
+        }
+    
+        
+       }
+       h3{
+        color: #404041;
+        font-weight: 700;
+        font-size: 18px;
+       }
+    }
+}
+
+.Btns{
+    margin: 20px 0 20px 40px;
+    button{
+        width: 100px;
+        height: 35px;
+        background: #2B6B73;
+        border-radius: 25px;
+        color: #FFFFFF;
+        outline: none;
+        border: none;
+        margin-right: 30px;
+
+        &.active{
+            background: #9E9E9E;
+        }
+    }
+}
+

@@ -1,42 +1,40 @@
 import React, { useState } from 'react'
-import Status from '../Status/Status'
-import classes from './CustomListView.module.scss'
+import Status from '../../../Status/Status'
+import styles from './CustomListView.module.scss'
 import { BsBookmark } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from 'react-icons/ri'
 import AdditionalInfo from './AdditionalInfo';
-import { CSSTransition } from 'react-transition-group';
-import '../../index.scss'
-import { SwitchTransition } from 'react-transition-group';
+import '../../../../index.scss'
 
 function CustomListView(props) {
     const [dropDown, setDropDown] = useState(false)
 
     return (
         <>
-            <div onClick={() => setDropDown(!dropDown)} className={classes.Wrapper}>
-                <div className={classes.Fsec}>
-                    <img className={classes.Img} src={require(`../../static/Images/${props.listItem.popupImg + '.png'}`)} alt={`${props.listItem.tags}`} />
-                    <div className={classes.Info}>
-                        <div className={classes.Headers}>
+            <div onClick={() => setDropDown(!dropDown)} className={styles.Wrapper}>
+                <div className={styles.Fsec}>
+                    <img className={styles.Img} src={require(`../../../../static/Images/${props.listItem.popupImg + '.png'}`)} alt={`${props.listItem.tags}`} />
+                    <div className={styles.Info}>
+                        <div className={styles.Headers}>
                             <h3>{props.listItem.title}</h3>
                             <h4>Developer: <a href={props.listItem.developerUrl}> {props.listItem.developerName}</a></h4>
                         </div>
-                        <div className={classes.Loc}>
+                        <div className={styles.Loc}>
                             <div>
                                 <IoLocationOutline />
                                 {props.listItem.location}
                             </div>
-                            <span className={classes.Tag}>{props.listItem.tags}</span>
+                            <span className={styles.Tag}>{props.listItem.tags}</span>
                         </div>
                     </div>
                 </div>
-                <div className={classes.Ssec}>
-                    <div className={classes.Status}>
+                <div className={styles.Ssec}>
+                    <div className={styles.Status}>
                         <Status status={props.listItem.status} />
                         <BsBookmark />
                     </div>
-                    <div className={classes.Dropdown}>
+                    <div className={styles.Dropdown}>
                         {dropDown
                             ? <RiArrowDropUpLine />
                             : <RiArrowDropDownLine />

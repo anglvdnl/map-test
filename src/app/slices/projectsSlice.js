@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Projects } from '../../data/dto/Projects/ProjectDto';
-import { setProjectsReducer as setProjects, addFilterReducer as addFilters, removeFilterReducer as removeFilter } from '../reducers/projectsReducers';
+import { setProjectsReducer as setProjects } from '../reducers/projectsReducers'
+import {
+    addProjectFilterReducer as addFilters,
+    removeProjectFilterReducer as removeFilter, resetProjectFiltersReducer as resetFilters,
+    updateProjectSearchReducer as updateSearch
+} from '../reducers/filterReducers';
 
 const projectsSlice = createSlice({
     name: "_proj",
@@ -9,6 +14,8 @@ const projectsSlice = createSlice({
         setProjects,
         addFilters,
         removeFilter,
+        resetFilters,
+        updateSearch
     }
 })
 

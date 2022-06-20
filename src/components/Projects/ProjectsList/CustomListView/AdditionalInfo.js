@@ -1,9 +1,9 @@
 import React from 'react'
-import classes from './CustomListView.module.scss'
+import styles from './CustomListView.module.scss'
 
 function AdditionalInfo(props) {
     return (
-        <div className={classes.AddInfo}>
+        <div className={styles.AddInfo}>
             <p>Since: {props.listItem.since}</p>
             <p>Number of Construction Jobs: {props.listItem.numConstructionJobs}</p>
             <p>Number of Permanent Jobs: {props.listItem.numPermanentJobs}</p>

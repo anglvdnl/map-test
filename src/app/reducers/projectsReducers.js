@@ -1,15 +1,7 @@
 import axios from 'axios';
-import { ProjectDto, DefaultProject } from '../../data/dto/Projects/ProjectDto'
-
-function getGeocode(location) {
-  return axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-    params: {
-      language: "en",
-      address: location,
-      key: 'AIzaSyBl2AvFtTuAen2S67EWxHwqjg9CqRGON94'
-    }
-  })
-}
+import { ProjectDto } from '../../data/dto/Projects/ProjectDto'
+import { DefaultProjsFilter } from '../../data/dto/Projects/ProjectsFilter';
+import { getGeocode } from '../../data/utils/geocode';
 
 const projectsInitialize = async (jsonData) => {
   let result = []
@@ -41,30 +33,4 @@ const setProjectsReducer = (state, action) => {
   state.filteredProjects = action.payload
 }
 
-const addFilterReducer = (state, action) => {
-  const value = action.payload
-
-  if (!state.provinceFilters.includes(value)) {
-    state.provinceFilters.push(value)
-    state.filteredProjects = state.projects.filter(x => state.provinceFilters.includes(x.province))
-  }
-}
-
-const removeFilterReducer = (state, action) => {
-  const value = action.payload
-
-  if (state.provinceFilters.includes(value)) {
-    let index = state.provinceFilters.indexOf(value)
-    if (index > -1) {
-      state.provinceFilters.splice(index, 1)
-
-      if (state.provinceFilters.length === 0) {
-        state.filteredProjects = state.projects
-      } else {
-        state.filteredProjects = state.projects.filter(x => state.provinceFilters.includes(x.province))
-      }
-    }
-  }
-}
-
-export { projectsInitialize, setProjectsReducer, addFilterReducer, removeFilterReducer }
+export { projectsInitialize, setProjectsReducer }

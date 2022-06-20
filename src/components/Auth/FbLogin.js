@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import FacebookLogin from 'react-facebook-login'
-import classes from './Login.module.scss'
+import styles from './Login.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { authActions } from '../../app/slices/authSlice'
 
@@ -23,7 +23,7 @@ function FbLogin() {
 
     if (user.isLogged) {
         fbContent = (
-            <div className={classes.Profile}>
+            <div className={styles.Profile}>
                 <img src={user.picture} alt={user.name} />
                 <h2>Welcome {user.name}</h2>
                 Email: {user.email}
@@ -32,7 +32,7 @@ function FbLogin() {
         )
     } else {
         return fbContent = (
-            <div className={classes.Login} >
+            <div className={styles.Login} >
                 <h1>Create Account</h1>
                 <FacebookLogin
                     fields="name,email,picture"
@@ -52,7 +52,7 @@ function FbLogin() {
                     <input id='check' type="checkbox" />
                     <label htmlFor="check">Sign up for Iron and Earth's mailing list. Stay in touch with the organisation!</label>
                 </div>
-                <button className={classes.LoginBtn}>Sign Up</button>
+                <button className={styles.LoginBtn}>Sign Up</button>
             </div >
 
         )

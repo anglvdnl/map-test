@@ -1,0 +1,205 @@
+.CustomPopup{
+    padding: 30px 10px 0 10px;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    .Wrapper{
+        padding: 0 26px 30px 26px;
+    }
+
+    .PopupNav{
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        svg{
+            width: 20px;
+            height: 25px;
+            color: #9E9E9E;
+        }
+
+        h2{
+            margin: 0 0 10px 0;
+            color: #2B6B73;
+        }
+    }
+
+    h1{
+        font-weight: 700;
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 5px;
+    }
+
+    a{
+        text-decoration: underline;
+        color: #2B6B73;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .Location{
+        display: flex;
+        align-items: center;
+
+        color: #404041;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        svg{
+            width: 16px;
+            height: 20px;
+        }
+    }
+
+    .Tag{
+        transition: all 0.5s;
+        background: #C8E6E8;
+        border-radius: 15px;
+        width: 100px;
+        height: 35px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2B6B73;
+        text-align: center;
+
+        .Tags{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg{
+            height: 25px;
+            width: 25px;
+            transform: translate(5px);
+        }
+    }
+
+    .TagActive{
+        transition: all 0.2s;
+        background: #C8E6E8;
+        border-radius: 15px 15px 0 0;
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2B6B73;
+
+        .Tags{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            
+            .TagList{
+                border-radius: 0 0 15px 15px;
+                position: absolute;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                background: #C8E6E8;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                padding-top: 15px;
+
+                p{
+                    padding: 0 0 10px 0;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .LongList{
+                border-radius: 0 0 0 15px;
+                position: absolute;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                background: #C8E6E8;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 120px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding-top: 15px;
+                font-size: 12px;
+
+                p{
+                    padding: 0 0 10px 0;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &::-webkit-scrollbar-track
+                {
+                    -webkit-box-shadow: inset 0 0 6px #2B6B73;
+                    background-color: #F5F5F5;
+                }
+                
+                &::-webkit-scrollbar
+                {
+                    width: 5px;
+                    background-color: #F5F5F5;
+                }
+                
+                &::-webkit-scrollbar-thumb
+                {
+                    background-color: #2B6B73;
+                    border: 2px solid #2B6B73;
+                }
+            }
+        }
+
+        svg{
+            height: 25px;
+            width: 25px;
+            transform: translate(5px);
+        }
+    }
+
+    button{
+        margin: 30px 0 0 0;
+        width: 120px;
+        height: 45px;
+        background: #2B6B73;
+        border-radius: 25px;
+        color: #FFFFFF;
+        border: 0;
+        outline: none;
+    }
+
+}
+
+.enter {
+    opacity: 0;
+}
+.enterActive { 
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+.exit { 
+    opacity: 1;
+}
+.exitDone{  
+    opacity: 0;
+    transition: opacity 0.2s;
+}

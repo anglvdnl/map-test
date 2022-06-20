@@ -1,3 +1,5 @@
+import { DefaultProjsFilter } from "./ProjectsFilter";
+
 const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
     location, province, status, expectedBy, since, numConstructionJobs, numPermanentJobs, isBookmarked,
     icon, iconClicked, position, popupImg) => {
@@ -23,14 +25,12 @@ const ProjectDto = (id, slug, title, developerName, developerUrl, tags,
     }
 };
 
-const DefaultProject = ProjectDto(null, '', '', '', '', '', '', '', null, null, '', null, null, null, '', '', {}, '')
-
-const Projects = (projects = [], provinceFilters = [], filteredProjects = []) => {
+const Projects = (projects = [], filteredProjects = [], filter = DefaultProjsFilter) => {
     return {
         projects: projects,
-        provinceFilters: provinceFilters,
-        filteredProjects: filteredProjects
+        filteredProjects: filteredProjects,
+        filter: filter,
     }
 }
 
-export { ProjectDto, Projects, DefaultProject }
+export { ProjectDto, Projects }

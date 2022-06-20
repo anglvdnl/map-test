@@ -1,21 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import classes from "./ProjectsMap.module.scss";
-import { CSSTransition } from "react-transition-group";
+import React, { useState } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
+import styles from "./ProjectsMap.module.scss";
 import { useSelector } from 'react-redux'
-import CustomPopup from '../CustomProjectsPopup/CustomPopup'
-import MapMarker from "./MapMarker";
+import MapProjMarker from "./MapProjMarker";
 
 function ProjectsMap(props) {
-  const projectsData = useSelector(state => state._proj)
+  const projectsData = useSelector(state => state._proj);
 
   const [map, setMap] = useState();
 
   return (
-    <div className={classes.Map} data-testid="map">
+    <div className={styles.Map} data-testid="map">
       <MapContainer
         center={props.mapStartPos}
-        zoom={5}
+        zoom={4}
         whenCreated={(leafletMap) => setMap(leafletMap)}
       >
         <TileLayer
@@ -24,7 +22,7 @@ function ProjectsMap(props) {
         />
 
         {projectsData.filteredProjects.map((project, index) => (
-          <MapMarker map={map} project={project} key={index} />
+          <MapProjMarker map={map} project={project} key={index} />
         ))}
 
       </MapContainer>
