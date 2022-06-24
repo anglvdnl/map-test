@@ -34,14 +34,13 @@ function MapTrainMarker(props) {
                 onOpen={() => setIsIconClicked(true)}
                 onClose={() => setIsIconClicked(false)}
                 className={styles.Popup}>
-                {trainings.length > 1
-                    ? (<Carousel>
+                {trainings.length === 1
+                    ? <div><CustomTrainingPopup trainings={trainings} data={trainings[0]} /></div>
+                    : (<Carousel>
                         {trainings.map((x, index) => (
                             <CustomTrainingPopup trainings={trainings} key={index} data={x} />
                         ))}
                     </Carousel>)
-
-                    : <div><CustomTrainingPopup trainings={trainings} data={trainings[0]} /></div>
                 }
             </Popup>
         </Marker >

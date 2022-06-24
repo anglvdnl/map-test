@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { ProjectDto } from '../../data/dto/Projects/ProjectDto'
-import { DefaultProjsFilter } from '../../data/dto/Projects/ProjectsFilter';
 import { getGeocode } from '../../data/utils/geocode';
 
 const projectsInitialize = async (jsonData) => {

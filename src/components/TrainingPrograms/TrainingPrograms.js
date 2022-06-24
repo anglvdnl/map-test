@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
 import styles from './TrainingPrograms.module.scss'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import TrainingMap from './TrainingMap/TrainingMap'
 import TrainingList from './TrainingList/TrainingList'
+import TrainingFilter from './TrainingsFilter/TrainingFilter'
+import { trainingsActions } from '../../app/slices/trainingSlice'
 
 function TrainingPrograms(props) {
+    const dispatch = useDispatch()
     const trainingsData = useSelector(state => state._train)
     const [view, setView] = useState(true)
+
+    function handleSearch(event) {
+        dispatch(trainingsActions.updateSearch(event.target.value))
+    }
 
     return (
         <>
@@ -25,8 +32,9 @@ function TrainingPrograms(props) {
                         <h1>Climate Solution Training</h1>
                         <button>Add Project</button>
                     </nav>
-                    <input placeholder='Search a training title or company' />
-                    <h3>Showing all {trainingsData.trainings.length} projects.</h3>
+                    <input placeholder='Search a training title or company' onChange={handleSearch} value={trainingsData.filter.searchValue} />
+                    <TrainingFilter />
+                    <h3>Showing all {trainingsData.filteredTrainings.length} projects.</h3>
                 </div>
                 {view
                     ?

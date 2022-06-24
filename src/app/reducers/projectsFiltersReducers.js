@@ -1,6 +1,5 @@
 import { DefaultProjsFilter } from "../../data/dto/Projects/ProjectsFilter"
 
-//Projects
 const updateProjectSearchReducer = (state, action) => {
     state.filter.searchValue = action.payload
 
@@ -35,7 +34,7 @@ const resetProjectFiltersReducer = (state) => {
 }
 
 const getFilteredProjects = (projects, filter) => {
-    const filteredProjects = projects.filter(project => {
+    return projects.filter(project => {
 
         const isFilteredByProvince = () => {
             return filter.province.length === 0
@@ -56,26 +55,10 @@ const getFilteredProjects = (projects, filter) => {
             return filter.searchValue === ''
                 ? true
                 : project.title.toLowerCase().includes(filter.searchValue.toLowerCase())
-
         }
 
         return isFilteredByProvince() && isFilteredByTag() && isFilteredBySearch();
     });
-
-    return filteredProjects;
 }
 
-//Trainings
-const addTrainingFilterReducer = (state, action) => {
-
-}
-
-const removeTrainingFilterReducer = (state, action) => {
-
-}
-
-const resetTrainingFiltersReducer = (state, action) => {
-
-}
-
-export { updateProjectSearchReducer, addProjectFilterReducer, removeProjectFilterReducer, resetProjectFiltersReducer, addTrainingFilterReducer, removeTrainingFilterReducer, resetTrainingFiltersReducer }
+export { updateProjectSearchReducer, addProjectFilterReducer, removeProjectFilterReducer, resetProjectFiltersReducer }

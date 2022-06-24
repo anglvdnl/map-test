@@ -1,5 +1,6 @@
 import { TrainingDto } from "../../data/dto/Training/TrainingDto";
 import { getGeocode } from "../../data/utils/geocode";
+import { getUniqueValue } from "../../data/utils/getUniqueValue";
 
 const trainingInitialize = async (jsonData) => {
     let result = []
@@ -33,12 +34,22 @@ const trainingInitialize = async (jsonData) => {
 const setTrainingsReducer = (state, action) => {
     state.trainings = action.payload
     state.filteredTrainings = action.payload
+
+    setGroupedTrainings(state)
 }
 
-const setGroupedTrainings = (state, action) => {
-    // const grouped = action.payload
-    // state.groupedTrainings.push(grouped)
-    // console.log(state.groupedTrainings)
+const setGroupedTrainings = (state) => {
+    state.groupedTrainings = []
+
+    const uniqueLocs = getUniqueValue(state.trainings, "location");
+
+    for (let i = 0; i < uniqueLocs.length; i++) {
+        const element = uniqueLocs[i];
+        const group = state.filteredTrainings.filter(x => x.location === element);
+        if (group.length > 0) {
+            state.groupedTrainings.push(group)
+        }
+    }
 }
 
 export { trainingInitialize, setTrainingsReducer, setGroupedTrainings }

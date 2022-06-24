@@ -24,6 +24,12 @@
         h2{
             margin: 0 0 10px 0;
             color: #2B6B73;
+            font-size: 16px;
+        }
+
+        h3{
+            text-align: center;
+            margin: 0 0 10px 0;
         }
     }
 
@@ -40,7 +46,38 @@
         font-style: italic;
         font-weight: 400;
         font-size: 16px;
-        margin-top: 0;
+    }
+
+    .Info{
+        width: 80px;
+        height: 30px;
+        transition: all 0.3s;
+        border: 1px solid #2B6B73;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-radius: 10px;
+        margin: 10px 0 10px 0;
+        color: #000;
+
+        span{
+            position: absolute;
+            background-color: #2B6B73;
+            color: #fff;
+            top: 50%;
+            transform: translate(100%, -50%);
+            max-width: 400px;
+            min-width:150px;
+            right: -10px;
+            display: inline;
+            float:  left;
+            clear: left;
+            z-index: 1000;
+            padding:10px;
+            border-radius: 15px;
+        }
     }
 
     .Location{
@@ -57,127 +94,28 @@
         }
     }
 
-    .Tag{
-        transition: all 0.5s;
-        background: #C8E6E8;
-        border-radius: 15px;
-        width: 100px;
-        height: 35px;
-        font-size: 14px;
+    .Tags{
         display: flex;
+        justify-content: flex-start;
         align-items: center;
-        justify-content: center;
-        color: #2B6B73;
-        text-align: center;
-
-        .Tags{
-            width: 100%;
-            height: 100%;
+        flex-wrap: wrap;
+        
+        .Tag{
+            background: #C8E6E8;
+            border-radius: 15px;
+            font-size: 14px;
             display: flex;
-            justify-content: center;
             align-items: center;
-        }
-
-        svg{
-            height: 25px;
-            width: 25px;
-            transform: translate(5px);
-        }
-    }
-
-    .TagActive{
-        transition: all 0.2s;
-        background: #C8E6E8;
-        border-radius: 15px 15px 0 0;
-        width: 100px;
-        height: 40px;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #2B6B73;
-
-        .Tags{
-            width: 100%;
-            height: 100%;
-            display: flex;
             justify-content: center;
-            align-items: center;
-            position: relative;
-
-            
-            .TagList{
-                border-radius: 0 0 15px 15px;
-                position: absolute;
-                display: flex;
-                flex-flow: column;
-                align-items: center;
-                background: #C8E6E8;
-                top: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100px;
-                padding-top: 15px;
-
-                p{
-                    padding: 0 0 10px 0;
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-
-            .LongList{
-                border-radius: 0 0 0 15px;
-                position: absolute;
-                display: flex;
-                flex-flow: column;
-                align-items: center;
-                background: #C8E6E8;
-                top: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100px;
-                height: 120px;
-                overflow-y: auto;
-                overflow-x: hidden;
-                padding-top: 15px;
-                font-size: 12px;
-
-                p{
-                    padding: 0 0 10px 0;
-                    width: 100%;
-                    text-align: center;
-                }
-
-                &::-webkit-scrollbar-track
-                {
-                    -webkit-box-shadow: inset 0 0 6px #2B6B73;
-                    background-color: #F5F5F5;
-                }
-                
-                &::-webkit-scrollbar
-                {
-                    width: 5px;
-                    background-color: #F5F5F5;
-                }
-                
-                &::-webkit-scrollbar-thumb
-                {
-                    background-color: #2B6B73;
-                    border: 2px solid #2B6B73;
-                }
-            }
-        }
-
-        svg{
-            height: 25px;
-            width: 25px;
-            transform: translate(5px);
+            color: #2B6B73;
+            text-align: center;
+            padding: 10px 15px;
+            margin: 0 10px 10px 0;
         }
     }
 
     button{
-        margin: 30px 0 0 0;
+        margin: 15px 0 0 0;
         width: 120px;
         height: 45px;
         background: #2B6B73;

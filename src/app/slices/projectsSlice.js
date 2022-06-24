@@ -5,7 +5,7 @@ import {
     addProjectFilterReducer as addFilters,
     removeProjectFilterReducer as removeFilter, resetProjectFiltersReducer as resetFilters,
     updateProjectSearchReducer as updateSearch
-} from '../reducers/filterReducers';
+} from '../reducers/projectsFiltersReducers';
 
 const projectsSlice = createSlice({
     name: "_proj",
