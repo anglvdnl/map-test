@@ -28,15 +28,21 @@ function FilterSection() {
     <div className={styles.Filters}>
       <div className={styles.Items} ref={ref}>
         <span>
-          <li onClick={() => handleFilterSelect("province")}>
-            Location <IoIosArrowDown className='dropdown' />
-          </li>
+          <div onClick={() => handleFilterSelect("province")} className={styles.Item}>
+            <li>
+              Location
+            </li>
+            <IoIosArrowDown />
+          </div>
           {isFilterActive("province") && <Filters filterType={selectedFilter.type} />}
         </span>
         <span>
-          <li onClick={() => handleFilterSelect("tags")}>
-            Climate Solution <IoIosArrowDown className='dropdown' />
-          </li>
+          <div onClick={() => handleFilterSelect("tags")} className={styles.Item}>
+            <li>
+              Climate Solution
+            </li>
+            <IoIosArrowDown />
+          </div>
           {isFilterActive("tags") && <Filters filterType={selectedFilter.type} />}
         </span>
       </div>

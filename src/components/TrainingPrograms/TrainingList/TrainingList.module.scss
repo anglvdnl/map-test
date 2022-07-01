@@ -1,83 +1,80 @@
-.List{
-
-    .Wrapper{
+.List {
+    .Wrapper {
         margin: 0px 80px 0 80px;
         padding: 30px 0 30px 0;
         cursor: pointer;
         border-top: 1px solid #333;
-        
+        position: relative;
 
-        .Sec1{
+        .Sec1 {
             display: flex;
             justify-content: space-between;
             position: relative;
 
-            .Headers{
-                h1{
+            .Headers {
+                h1 {
                     font-weight: 700;
                     font-size: 18px;
                     color: #333333;
                     margin-bottom: 5px;
                 }
 
-                a{
+                a {
                     text-decoration: underline;
-                    color: #2B6B73;
+                    color: #2b6b73;
                     font-style: italic;
                     font-weight: 400;
                     font-size: 16px;
                 }
 
-                p{
-
+                p {
                 }
             }
 
-            svg{
+            svg {
                 position: absolute;
-                width: 30px;
-                height: 30px;
-                color: #9E9E9E;
+                font-size: 20px;
+                color: #9e9e9e;
                 right: 0;
             }
         }
 
-        .Sec2{
+        .Sec2 {
             display: flex;
             justify-content: space-between;
 
-            .Info{
+            .Info {
                 display: flex;
                 justify-content: space-between;
 
-                .Location{
-                    margin-right: 250px;
+                .Location {
+                    margin-right: 200px;
                     display: flex;
                     align-items: center;
-            
+
                     color: #404041;
                     font-size: 16px;
                     margin-bottom: 15px;
-            
-                    svg{
+
+                    svg {
                         width: 16px;
                         height: 20px;
                     }
                 }
 
-                .Tags{
+                .Tags {
                     display: flex;
                     justify-content: flex-start;
                     flex-wrap: wrap;
-                    
-                    .Tag{
-                        background: #C8E6E8;
+
+                    .Tag {
+                        background: #c8e6e8;
                         border-radius: 15px;
                         font-size: 14px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: #2B6B73;
+                        color: #2b6b73;
                         text-align: center;
                         padding: 10px 15px;
                         margin: 0 10px 10px 0;
@@ -85,43 +82,48 @@
                 }
             }
 
-            svg{
-                height: 30px;
-                width: 30px;
+            .DropDown {
+                svg {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                    height: 20px;
+                    width: 20px;
+                }
             }
         }
 
-        .Info{
+        .Info {
             display: flex;
             justify-content: space-between;
 
-            .Elig{
+            .Elig {
+                margin-left: 10px;
                 width: 50%;
-                h1{
+                h1 {
                     font-size: 16px;
                     font-weight: 700;
                 }
 
-                p{
-                    
+                p {
                 }
             }
-    
-            .OInfo{
+
+            .OInfo {
                 width: 50%;
-                
-                ul{
+
+                ul {
                     width: 100%;
                     list-style: none;
 
-                    li{
+                    li {
                         font-weight: 700;
                         width: 100%;
                         display: flex;
                         margin-bottom: 20px;
                         border-bottom: 2px solid rgb(224, 224, 224);
 
-                        p{
+                        p {
                             margin: 0;
                             font-weight: 400;
                         }
@@ -130,12 +132,89 @@
             }
         }
 
-        .WBtn{
+        .WBtn {
             background-color: #2b6b73;
             padding: 8px 25px;
             border-radius: 20px;
             color: #fff;
             border: 0;
         }
-    }   
+    }
+
+    .AdditionalInfo {
+        background-color: #f0f0f0;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .List {
+        .Wrapper {
+            .Sec1 {
+                .Headers {
+                    h1 {
+                        font-size: 16px;
+                    }
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .Sec2 {
+                .Info {
+                    .Location {
+                        margin-right: 50px;
+                        font-size: 14px;
+                    }
+
+                    .Tags {
+                        .Tag {
+                            font-size: 14px;
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+
+            .Info {
+                .Elig {
+                    h1 {
+                        font-size: 14px;
+                    }
+                }
+
+                .OInfo {
+                    ul {
+                        li {
+                            font-size: 14px;
+
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .List {
+        .Wrapper {
+            margin: 0;
+            padding: 20px;
+
+            .Sec2 {
+                .DropDown {
+                    svg {
+                        right: 20px;
+                    }
+                }
+            }
+        }
+
+        .AddInfo {
+            margin: 0;
+        }
+    }
 }

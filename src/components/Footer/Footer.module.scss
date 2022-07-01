@@ -1,23 +1,23 @@
-.Footer{
+.Footer {
     margin-top: 50px;
-    
-    .Email{
+
+    .Email {
         text-align: center;
-        background-color: rgba($color: #9E9E9ECC, $alpha: 0.8);
+        background-color: rgba($color: #9e9e9ecc, $alpha: 0.8);
         color: #fff;
 
-        h2{
+        h2 {
             font-weight: 700;
             font-size: 18px;
             padding: 20px 0 0 0;
         }
 
-        h3{
+        h3 {
             font-weight: 400;
             font-size: 14px;
         }
 
-        input{
+        input {
             background-color: transparent;
             border: 0;
             border-bottom: 1px solid #fff;
@@ -28,52 +28,52 @@
 
             &::placeholder {
                 color: #fff;
-                opacity: 1; 
-              }
-              width: 400px;
+                opacity: 1;
+            }
+            width: 400px;
         }
 
-        button{
+        button {
             margin-left: 30px;
-            background-color: #4CB4C0;
+            background-color: #4cb4c0;
             border-radius: 25px;
             padding: 10px 20px;
             color: #fff;
             border: 0;
         }
     }
-    
-    .InfoSection{
-        background-color: #E0E0E0;
-        ul{
+
+    .InfoSection {
+        background-color: #e0e0e0;
+        ul {
             list-style: none;
             padding: 0px 5px;
 
-            li{
+            li {
                 color: #616161;
                 font-style: italic;
             }
         }
-        h2{
+        h2 {
             margin: 0;
         }
 
-        .Info{
+        .Info {
             display: flex;
             justify-content: space-evenly;
             margin-bottom: 0px;
 
-            .Div1{
-                h2{
+            .Div1 {
+                h2 {
                     padding-top: 30px;
-                    color: #4CB4C0;
+                    color: #4cb4c0;
                     font-weight: 800;
                     font-size: 18px;
                     line-height: 22px;
                     letter-spacing: -0.02em;
                 }
 
-                h3{
+                h3 {
                     color: #404041;
                     font-weight: 400;
                     font-size: 24px;
@@ -82,7 +82,7 @@
                     margin-top: 10px;
                 }
 
-                p{
+                p {
                     color: #000;
                     font-weight: 400;
                     font-size: 14px;
@@ -91,27 +91,27 @@
 
                 max-width: 350px;
             }
-            .Div2{
-                h2{
+            .Div2 {
+                h2 {
                     color: #404041;
                     padding-top: 50px;
                     font-weight: 700;
                     font-size: 16px;
                 }
             }
-            .Div3{
-                h2{
+            .Div3 {
+                h2 {
                     color: #404041;
                     padding-top: 50px;
                     font-weight: 700;
                     font-size: 16px;
                 }
 
-                p{
+                p {
                     color: #616161;
                     font-style: italic;
                 }
-                svg{
+                svg {
                     color: #404041;
                     width: 40px;
                     height: 40px;
@@ -120,24 +120,133 @@
             }
         }
 
-        .Copyright{
+        .Copyright {
             display: flex;
             align-items: center;
             flex-flow: column;
 
-            div{
+            div {
                 display: flex;
-                p{
+                p {
                     color: #404041;
                     text-align: center;
                 }
             }
 
-            h3{
+            h3 {
                 font-weight: 400;
                 font-size: 14px;
                 color: #404041;
                 margin: 0 0 20px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .Footer {
+        .Email {
+            h2 {
+                font-size: 15px;
+            }
+
+            input {
+                width: 300px;
+            }
+
+            button {
+                padding: 6px 15px;
+            }
+        }
+
+        .InfoSection {
+            .Info {
+                .Div1 {
+                    max-width: 250px;
+
+                    h2 {
+                        padding-top: 20px;
+                        font-size: 16px;
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                        margin-top: 10px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                    }
+                }
+                .Div2 {
+                    ul {
+                        padding: 0;
+
+                        li {
+                            font-size: 14px;
+                        }
+                    }
+                    h2 {
+                        padding-top: 30px;
+                        font-size: 14px;
+                    }
+                }
+                .Div3 {
+                    p {
+                        font-size: 14px;
+                    }
+                    h2 {
+                        padding-top: 30px;
+                        font-size: 14px;
+                    }
+
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .Copyright {
+                h3 {
+                    font-size: 14px;
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .Footer {
+        .Email {
+            h2 {
+                font-size: 14px;
+            }
+
+            input {
+                width: 200px;
+            }
+
+            button {
+                padding: 6px 15px;
+            }
+        }
+        .InfoSection {
+            .Info {
+                display: block;
+                width: 300px;
+                margin: 0 auto;
+                text-align: center;
+
+                .Div1 {
+                    max-width: 100%;
+                }
+            }
+
+            .Copyright {
+                margin-top: 20px;
             }
         }
     }

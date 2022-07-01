@@ -33,10 +33,12 @@ function TrainingItem(props) {
                             ))}
                         </div>
                     </div>
-                    {dropDown
-                        ? <RiArrowDropUpLine />
-                        : <RiArrowDropDownLine />
-                    }
+                    <div className={styles.DropDown}>
+                        {dropDown
+                            ? <RiArrowDropUpLine />
+                            : <RiArrowDropDownLine />
+                        }
+                    </div>
                 </div>
             </div>
             {dropDown

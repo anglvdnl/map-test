@@ -1,41 +1,63 @@
-.Filters{
+.Filters {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0;
     margin-bottom: 40px;
 
-    .Items{
+    .Items {
         display: flex;
         justify-content: space-around;
 
-        span{
+        span {
             position: relative;
-            li{
+
+            .Item {
+                list-style: none;
+                display: inline;
+                border-radius: 25px;
+                padding: 10px 20px 10px 20px;
+                border: 2px solid #e0e0e0;
+                display: flex;
+                justify-items: center;
+                align-items: center;
                 margin-right: 20px;
+
+                li {
+                    margin-right: 10px;
+                    color: #404041;
+                    cursor: pointer;
+                }
             }
 
-            .Filtered{
+            .Filtered {
                 z-index: 10000;
                 background-color: #fff;
-                box-shadow: 0px 0px 26px 1px rgba(0,0,0,0.66);
+                box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.66);
                 position: absolute;
                 top: 100%;
                 left: 50%;
                 width: 400px;
                 transform: translate(-50%, 10%);
                 border-radius: 20px;
-                
-                ul{
+
+                ul {
                     display: flex;
                     flex-wrap: wrap;
+                    list-style: none;
 
-                    li{
+                    li {
                         margin: 5px;
                         background-color: #fff;
+                        color: #404041;
+                        cursor: pointer;
+                        border-radius: 25px;
+                        padding: 10px 20px 10px 20px;
+                        border: 2px solid #e0e0e0;
 
-                        &.active{
-                            background-color: #4CB4C0;
+                        &.active {
+                            background-color: #4cb4c0;
                             color: #fff;
                         }
                     }
@@ -44,24 +66,154 @@
         }
     }
 
-    li{
-        border: 2px solid #E0E0E0;
-        border-radius: 25px;
-        height: 45px;
-        width: auto;
-        display: flex;
-        align-items: center;
-        padding: 20px 20px 20px 20px;
-        text-decoration: none;
-        color: #404041;
-        position: relative;
+    .RFilter {
+        color: #4cb4c0;
+        border: 2px solid #4cb4c0;
         cursor: pointer;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+        min-width: 105px;
     }
+}
 
-    .RFilter{
-        color: #4CB4C0;
-        border: 2px solid #4CB4C0;
+@media screen and (max-width: 1225px) {
+    .Filters {
+        .Items {
+            span {
+                .Item {
+                    padding: 10px 15px 10px 15px;
+
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .Filtered {
+                width: 200px;
+
+                ul {
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .RFilter {
+            font-size: 14px;
+        }
     }
+}
 
-    
+@media screen and (max-width: 1120px) {
+    .Filters {
+        .Items {
+            span {
+                .Item {
+                    padding: 10px;
+
+                    li {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .Filtered {
+                ul {
+                    li {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .RFilter {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .Filters {
+        .Items {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .RFilter {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .Filters {
+        .Items {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            span {
+                .Item {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .RFilter {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .Filters {
+        flex-flow: column;
+        align-items: flex-start;
+
+        .Items {
+            display: flex;
+            width: 50%;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            span {
+                .Item {
+                    margin-bottom: 10px;
+                    padding: 6px 12px 6px 12px;
+                }
+
+                .Filtered {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(50%, -50%);
+                    width: 200px;
+
+                    ul{
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        .RFilter {
+            padding: 6px 12px 6px 12px;
+            min-width: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .Filters {
+        .Items {
+            span {
+                .Filtered {
+                    top: 50%;
+                    left: 30%;
+                    transform: translate(50%, -50%);
+                    width: 200px;
+
+                    ul{
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -11,7 +11,6 @@ function FilterButton(props) {
     const projectsState = useSelector(state => state._proj);
 
     const isActive = projectsState.filter[filterType].includes(currentValue)
-    console.log(projectsState.filter.filterType)
 
     function handleClick() {
         if (isActive) {

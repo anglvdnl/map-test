@@ -29,27 +29,39 @@ function TrainingFilter() {
         <div className={styles.Filters}>
             <div className={styles.Items} ref={ref}>
                 <span>
-                    <li onClick={() => handleFilterSelect("certType")}>
-                        Certification Type <IoIosArrowDown className='dropdown' />
-                    </li>
+                    <div onClick={() => handleFilterSelect("certType")} className={styles.Item}>
+                        <li>
+                            Certification Type
+                        </li>
+                        <IoIosArrowDown />
+                    </div>
                     {isFilterActive("certType") && <Filters filterType={activeFilter.type} />}
                 </span>
                 <span>
-                    <li onClick={() => handleFilterSelect("province")}>
-                        Location <IoIosArrowDown className='dropdown' />
-                    </li>
+                    <div onClick={() => handleFilterSelect("province")} className={styles.Item}>
+                        <li>
+                            Location
+                        </li>
+                        <IoIosArrowDown />
+                    </div>
                     {isFilterActive("province") && <Filters filterType={activeFilter.type} />}
                 </span>
                 <span>
-                    <li onClick={() => handleFilterSelect("tags")}>
-                        Climate Solution <IoIosArrowDown className='dropdown' />
-                    </li>
+                    <div onClick={() => handleFilterSelect("tags")} className={styles.Item}>
+                        <li>
+                            Climate Solution
+                        </li>
+                        <IoIosArrowDown />
+                    </div>
                     {isFilterActive("tags") && <Filters filterType={activeFilter.type} />}
                 </span>
                 <span>
-                    <li onClick={() => handleFilterSelect("language")}>
-                        Language <IoIosArrowDown className='dropdown' />
-                    </li>
+                    <div onClick={() => handleFilterSelect("language")} className={styles.Item}>
+                        <li>
+                            Language
+                        </li>
+                        <IoIosArrowDown />
+                    </div>
                     {isFilterActive("language") && <Filters filterType={activeFilter.type} />}
                 </span>
             </div>

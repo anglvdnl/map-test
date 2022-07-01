@@ -1,4 +1,4 @@
-.Wrapper{
+.Wrapper {
     display: flex;
     justify-content: space-between;
     margin: 0px 80px 0 80px;
@@ -6,33 +6,32 @@
     cursor: pointer;
     border-top: 1px solid #333;
 
-    .Fsec{
+    .Fsec {
         display: flex;
         align-items: center;
 
-        .Img{
+        .Img {
             margin: 0 30px 0 20px;
         }
 
-        .Info{
+        .Info {
             max-width: 80%;
 
-            .Headers{
-                h4{
-                    a{
+            .Headers {
+                h4 {
+                    a {
                         color: #2b6b73;
                     }
                 }
-                
             }
         }
 
-        .Loc{
+        .Loc {
             display: flex;
             align-items: center;
 
-            .Tag{
-                background: #C8E6E8;
+            .Tag {
+                background: #c8e6e8;
                 border-radius: 36px;
                 width: 70px;
                 height: 30px;
@@ -40,30 +39,29 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #2B6B73;
+                color: #2b6b73;
                 margin-left: 40px;
             }
         }
     }
-    .Ssec{
+    .Ssec {
         display: flex;
         flex-flow: column;
         align-items: flex-end;
         justify-content: space-between;
 
-        .Status{
+        .Status {
             display: flex;
             align-items: center;
 
-            svg{
+            svg {
                 margin: 0 10px 0 20px;
                 font-size: 20px;
             }
-
         }
 
-        .Dropdown{
-            svg{
+        .Dropdown {
+            svg {
                 font-size: 20px;
                 height: 2em;
                 width: 2em;
@@ -72,36 +70,192 @@
     }
 }
 
-.AddInfo{
+.AddInfo {
     margin: 0 80px 0 80px;
     border-top: 1px solid #333;
     position: relative;
     padding: 20px;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
 
-    p{
+    p {
         font-weight: 700;
         margin-left: 20px;
     }
 
-    button{
-       position: absolute;
-       right: 10px;
-       bottom: 20px;
-       padding: 8px 25px;
-       border-radius: 40px;
-       border: 2px solid #C8E6E8;
-       transition: all 0.3s;
-       cursor: pointer;
-       background-color: #fff;
+    button {
+        position: absolute;
+        right: 10px;
+        bottom: 20px;
+        padding: 8px 25px;
+        border-radius: 40px;
+        border: 2px solid #c8e6e8;
+        transition: all 0.3s;
+        cursor: pointer;
+        background-color: #fff;
 
-       &:hover{
-           background-color: #C8E6E8;
-       }
+        &:hover {
+            background-color: #c8e6e8;
+        }
 
-       &:active{
-           transform: scale(0.95);
-       }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .Wrapper {
+        .Fsec {
+            .Img {
+                width: 80px;
+            }
+
+            .Info {
+                .Headers {
+                    h3 {
+                        font-size: 16px;
+                    }
+                    h4 {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .Loc {
+                .Tag {
+                    width: 60px;
+                    height: 25px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .Ssec {
+            .Status {
+                img {
+                    width: 12px;
+                    height: 12px;
+                }
+                p {
+                    font-size: 12px;
+                }
+                svg {
+                    margin: 0 10px 0 20px;
+                    font-size: 15px;
+                }
+            }
+
+            .Dropdown {
+                svg {
+                    font-size: 15px;
+                    height: 2em;
+                    width: 2em;
+                }
+            }
+        }
     }
 
+    .AddInfo {
+        margin: 0 80px 0 80px;
+        border-top: 1px solid #333;
+        position: relative;
+        padding: 10px;
+        background-color: #f0f0f0;
+
+        p {
+            font-size: 14px;
+        }
+
+        button {
+            padding: 5px 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .Wrapper {
+        margin: 0 60px;
+        padding: 15px 0 15px 0;
+        display: block;
+        position: relative;
+
+        .Fsec {
+            .Img {
+                width: 60px;
+            }
+
+            .Info {
+                max-width: none;
+
+                .Headers {
+                    h3 {
+                        font-size: 14px;
+                    }
+                    h4 {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .Loc {
+                font-size: 14px;
+                display: block;
+
+                .Tag {
+                    width: 60px;
+                    height: 25px;
+                    font-size: 12px;
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .Ssec {
+            display: block;
+
+            .Status {
+                display: block;
+                div {
+                    margin-left: 20px;
+                    justify-content: flex-start;
+                    p {
+                        margin: 0;
+                    }
+                }
+                svg {
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                }
+            }
+
+            .Dropdown {
+                svg {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .AddInfo {
+        margin: 0 60px;
+        p {
+            font-size: 12px;
+        }
+
+        button {
+            padding: 4px 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Wrapper {
+        margin: 0;
+    }
+
+    .AddInfo {
+        margin: 0;
+    }
 }

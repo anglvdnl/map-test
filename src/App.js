@@ -9,7 +9,6 @@ import styles from './App.module.scss'
 import Projects from "./data/json/projects.json";
 import Trainings from './data/json/training_programs.json'
 import Navbar from './components/Navbar/Navbar';
-import СlimatSolutionsPage from './components/Pages/СlimatSolutionsPage'
 import ProjectsPage from './components/Pages/ProjectsPage';
 import TrainingPage from './components/Pages/TrainingPage';
 import AuthPage from './components/Pages/AuthPage';
@@ -27,15 +26,14 @@ function App() {
   }
 
   const mapStartPos = { lat: 46.877186, lng: -96.789803 };
-
+  
   return (
     <div className={styles.App}>
       <HashRouter hash="mapping-proj">
         <Routes>
           <Route path='/' element={<Navbar />}>
-            <Route path='' element={<СlimatSolutionsPage />} />
-            <Route path='projects' element={<ProjectsPage mapStartPos={mapStartPos} />} />
-            <Route path='training' element={<TrainingPage mapStartPos={mapStartPos} />} />
+            <Route path='' element={<ProjectsPage mapStartPos={mapStartPos} />} />
+            <Route path='trainings' element={<TrainingPage mapStartPos={mapStartPos} />} />
             <Route path='auth' element={<AuthPage />} />
           </Route>
         </Routes>

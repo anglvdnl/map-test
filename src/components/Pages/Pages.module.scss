@@ -10,3 +10,25 @@
 .Projects{
     margin: 0 100px;
 }
+
+@media screen and (max-width: 720px) {
+    .TP{
+        margin: 0 50px;
+    
+    }
+    
+    .Projects{
+        margin: 0 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .TP{
+        margin: 0;
+    
+    }
+    
+    .Projects{
+        margin: 0;
+    }
+}

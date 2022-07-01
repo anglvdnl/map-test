@@ -5,7 +5,7 @@ function AdditionalInfo(props) {
   const item = props.item
 
   return (
-    <div className={styles.Wrapper}>
+    <div className={`${styles.Wrapper} ${styles.AdditionalInfo}`}>
       <div className={styles.Info}>
         <div className={styles.Elig}>
           <h1>Prerequisites and Eligibility:</h1>

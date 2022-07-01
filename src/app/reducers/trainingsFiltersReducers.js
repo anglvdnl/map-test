@@ -5,6 +5,8 @@ const updateTrainingSearchReducer = (state, action) => {
     state.filter.searchValue = action.payload
 
     state.filteredTrainings = getFilteredTrainings(state.trainings, state.filter)
+
+    setGroupedTrainings(state)
 }
 
 const addTrainingFilterReducer = (state, action) => {
